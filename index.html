@@ -14,7 +14,7 @@
         }
 
         body {
-            background: #f0f2f5;
+            background: #fdf5f7;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -29,11 +29,11 @@
             width: 450px;
             height: 270px;
             background: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(244, 143, 177, 0.25);
             position: relative;
             overflow: hidden;
-            border: 1px solid #e0e0e0;
+            border: 1px solid #ffdde5;
         }
 
         /* ==========================================
@@ -44,107 +44,112 @@
             flex-direction: column;
         }
 
-        /* Dải màu hồng đô thị phía trên */
+        /* Dải màu hồng ngọt ngào phía trên */
         .front-top {
-            height: 85px;
-            background: linear-gradient(to right, #d493a7, #c1728c); /* Bạn có thể thay bằng ảnh cityscape nếu có */
+            height: 95px;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
             position: relative;
         }
 
-        /* Khối màu xanh đậm bên trái */
+        /* Khối màu hồng đậm lượn góc bên trái */
         .front-top::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
-            width: 50%;
+            width: 55%;
             height: 100%;
-            background: #102a54;
-            clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+            background: #f48fb1;
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
         }
 
-        /* Logo hiệu ứng Love You */
+        /* Khung màu tím di chuyển lên chỗ mũi tên */
         .logo-area {
             position: absolute;
-            top: 15px;
-            left: 20px;
+            top: 32px;
+            right: 25px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             color: #ffffff;
-        }
-
-        .logo-circle {
-            width: 45px;
-            height: 45px;
-            border: 2px dashed #ffb3c6;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 9px;
-            font-weight: bold;
-            text-align: center;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 6px 14px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
         }
 
         .logo-text {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
         /* Thân dưới mặt trước */
         .front-body {
             display: flex;
-            padding: 15px 20px;
-            height: calc(100% - 85px);
+            padding: 15px 25px;
+            height: calc(100% - 95px);
             justify-content: space-between;
+            align-items: center;
         }
 
         /* Thông tin chữ bên trái */
         .info-fields {
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 8px;
             justify-content: center;
+        }
+
+        /* Vị trí cũ của khung tím - Thay thế bằng chữ Best Couple to hơn */
+        .best-couple-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: #d81b60;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .field {
             display: flex;
             font-size: 14px;
+            align-items: center;
         }
 
         .label {
-            width: 80px;
+            width: 75px;
             font-weight: bold;
-            color: #555;
+            color: #880e4f;
         }
 
         .value {
-            color: #111;
-            font-weight: 500;
-            }
+            color: #4c1130;
+            font-weight: 600;
+        }
 
-        /* Khu vực ảnh và mã vạch bên phải */
+        /* Khu vực ảnh màu vàng - Hạ thấp xuống tí, không thu nhỏ */
         .right-zone {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            width: 160px;
-            margin-top: -45px; /* Đẩy ảnh đè lên dải màu hồng */
+            width: 140px;
+            margin-top: 15px; 
             z-index: 2;
+            gap: 10px;
         }
 
         .photo-box {
             width: 120px;
             height: 120px;
-            border: 3px solid #ffffff;
-            border-radius: 8px;
+            border: 4px solid #ffffff;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            background: #e0e0e0;
+            box-shadow: 0 6px 15px rgba(244, 143, 177, 0.4);
+            background: #fce4ec;
         }
 
         .photo-box img {
@@ -153,37 +158,27 @@
             object-fit: cover;
         }
 
-        .sub-text {
+        /* Box điền chữ #loveyouforever ở dưới khung ảnh */
+        .love-forever-box {
+            background: #f48fb1;
+            color: #ffffff;
             font-size: 10px;
             font-weight: bold;
-            color: #102a54;
-            margin-top: 4px;
+            padding: 4px 12px;
+            border-radius: 12px;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 6px rgba(244, 143, 177, 0.3);
         }
 
-        /* Giả lập mã vạch mặt trước */
-        .barcode-dummy {
-            width: 130px;
-            height: 25px;
-            background: repeating-linear-gradient(
-                90deg,
-                #111,
-                #111 2px,
-                #fff 2px,
-                #fff 6px
-            );
-            margin-bottom: 5px;
-        }
-
-        /* Thanh trang trí đáy */
+        /* Thanh trang trí đáy hồng đậm */
         .front-bottom-bar {
             position: absolute;
-            top: unset;
             bottom: 0;
             left: 0;
             width: 100%;
             height: 8px;
-            background: #102a54;
+            background: #e91e63;
         }
 
         /* ==========================================
@@ -194,16 +189,17 @@
             flex-direction: column;
             justify-content: space-between;
             padding: 25px;
+            background: #ffffff;
         }
 
-        /* Thanh trang trí trên của mặt sau */
+        /* Thanh trang trí trên của mặt sau đổi sang màu hồng */
         .back-top-bar {
             position: absolute;
             top: 15px;
             left: 0;
             width: 100%;
             height: 20px;
-            background: #102a54;
+            background: #f48fb1;
         }
 
         .back-content {
@@ -220,32 +216,36 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
         }
 
         .qr-box {
             width: 110px;
             height: 110px;
-            border: 1px solid #ccc;
+            border: 2px solid #fff0f3;
+            border-radius: 10px;
             padding: 5px;
             background: #fff;
+            box-shadow: 0 4px 10px rgba(244, 143, 177, 0.15);
         }
 
         .qr-box img {
             width: 100%;
             height: 100%;
+            border-radius: 6px;
         }
 
         .qr-hint {
             font-size: 8px;
-            color: #666;
+            color: #ad1457;
+            font-weight: 500;
         }
 
         /* Đoạn văn bản trung tâm */
         .text-zone {
             flex: 1;
             text-align: center;
-            padding: 0 10px;
+            padding: 0 5px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -254,13 +254,14 @@
 
         .text-zone h3 {
             font-size: 16px;
-            color: #102a54;
+            color: #d81b60;
             margin-bottom: 8px;
+            font-weight: 800;
         }
 
         .text-zone p {
-            font-size: 12px;
-            color: #444;
+            font-size: 11px;
+            color: #5c0e36;
             line-height: 1.4;
             font-weight: 500;
         }
@@ -274,22 +275,22 @@
             gap: 5px;
         }
 
-        /* Vân tay hình tim */
+        /* Vân tay hình tim hồng mộng mơ */
         .fingerprint {
             font-size: 45px;
-            color: #c1728c;
+            color: #ff80ab;
             line-height: 1;
         }
 
-        /* Khung chứa ảnh mới mặt sau bổ sung */
+        /* Khung chứa ảnh mặt sau bổ sung */
         .back-photo-box {
             width: 120px;
             height: 120px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
+            border: 3px solid #ffffff;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            background: #e0e0e0;
+            box-shadow: 0 4px 10px rgba(244, 143, 177, 0.2);
+            background: #fce4ec;
         }
 
         .back-photo-box img {
@@ -302,7 +303,7 @@
         .spotify-box {
             width: 120px;
             height: 30px;
-            background: #000; /* Nền đen đặc trưng của mã quét Spotify */
+            background: #000; 
             border-radius: 4px;
             overflow: hidden;
             display: flex;
@@ -322,22 +323,25 @@
             .card {
                 width: 340px;
                 height: 210px;
+                border-radius: 15px;
             }
-            .front-top { height: 65px; }
-            .logo-circle { width: 35px; height: 35px; font-size: 7px;}
-            .logo-text { font-size: 11px; }
-            .front-body { padding: 10px 15px; height: calc(100% - 65px); }
-            .right-zone { margin-top: -35px; width: 110px;}
-            .photo-box { width: 85px; height: 85px; }
+            .front-top { height: 75px; }
+            .front-top::before { width: 55%; }
+            .logo-area { top: 22px; right: 15px; padding: 4px 10px; }
+            .logo-text { font-size: 10px; }
+            .front-body { padding: 10px 15px; height: calc(100% - 75px); }
+            .best-couple-title { font-size: 14px; }
+            .right-zone { margin-top: 10px; width: 95px; gap: 6px;}
+            .photo-box { width: 85px; height: 85px; border-radius: 10px; }
+            .love-forever-box { font-size: 8px; padding: 2px 8px; }
             .field { font-size: 11px; }
-            .label { width: 60px; }
-            .barcode-dummy { width: 95px; height: 18px; }
+            .label { width: 55px; }
             .text-zone h3 { font-size: 13px; }
             .text-zone p { font-size: 9px; }
             .qr-box { width: 80px; height: 80px; }
             .spotify-box { width: 90px; height: 23px; }
-            .fingerprint { font-size: 30px; }
-            .back-photo-box { width: 85px; height: 85px; }
+            .fingerprint { font-size: 32px; }
+            .back-photo-box { width: 85px; height: 85px; border-radius: 10px; }
         }
     </style>
 </head>
@@ -346,13 +350,14 @@
     <div class="card front-card">
         <div class="front-top">
             <div class="logo-area">
-                <div class="logo-circle">♥ ♥ ♥<br>LOVE YOU<br>♥ ♥ ♥</div>
                 <div class="logo-text">Couple ID Card</div>
             </div>
         </div>
         
         <div class="front-body">
             <div class="info-fields">
+                <div class="best-couple-title">Best Couple</div>
+                
                 <div class="field">
                     <div class="label">Id Card</div>
                     <div class="value">♥Hữu Duy & Như Quỳnh🍊♥</div>
@@ -375,13 +380,11 @@
                 <div class="photo-box">
                     <img src="memory 15.jpg" alt="Chỗ để ảnh cặp đôi">
                 </div>
-                <div class="sub-text">Best Couple</div>
-                <div class="barcode-dummy"></div>
+                <div class="love-forever-box">#loveyouforever</div>
             </div>
         </div>
         <div class="front-bottom-bar"></div>
     </div>
-
 
     <div class="card back-card">
         <div class="back-top-bar"></div>
@@ -397,7 +400,7 @@
             <div class="text-zone">
                 <h3>Couple ID Card</h3>
                 <p>Dùng để nhận diện các cặp đôi đang trong một mối quan hệ.</p>
-                <p style="margin-top: 5px; font-weight: bold; color: #c1728c;">Mục đích sử dụng:</p>
+                <p style="margin-top: 5px; font-weight: bold; color: #d81b60;">Mục đích sử dụng:</p>
                 <p>Khẳng định chủ quyền, vui lòng luôn mang theo bên mình.</p>
                 
                 <div class="spotify-box">
