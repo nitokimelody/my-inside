@@ -44,14 +44,12 @@
             flex-direction: column;
         }
 
-        /* Header dải màu hồng được thu nhỏ lại, không quá dài */
         .front-top {
             height: 70px;
             background: linear-gradient(135deg, #ffafbd, #ffc3a0);
             position: relative;
         }
 
-        /* Khối màu hồng đậm lượn góc bên trái */
         .front-top::before {
             content: "";
             position: absolute;
@@ -63,7 +61,6 @@
             clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
         }
 
-        /* Box chữ COUPLE ID CARD được dời qua bên trái và làm to lên */
         .logo-area {
             position: absolute;
             top: 18px;
@@ -86,7 +83,6 @@
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
-        /* Thân dưới mặt trước */
         .front-body {
             display: flex;
             padding: 15px 25px;
@@ -95,7 +91,6 @@
             align-items: center;
         }
 
-        /* Thông tin chữ bên trái */
         .info-fields {
             display: flex;
             flex-direction: column;
@@ -129,7 +124,6 @@
             font-weight: 600;
         }
 
-        /* Khu vực ảnh màu vàng */
         .right-zone {
             display: flex;
             flex-direction: column;
@@ -156,7 +150,6 @@
             object-fit: cover;
         }
 
-        /* Box chữ #loveyouforever */
         .love-forever-box {
             background: #f48fb1;
             color: #ffffff;
@@ -169,7 +162,6 @@
             box-shadow: 0 2px 6px rgba(244, 143, 177, 0.3);
         }
 
-        /* Thanh trang trí đáy hồng đậm */
         .front-bottom-bar {
             position: absolute;
             bottom: 0;
@@ -180,32 +172,33 @@
         }
 
         /* ==========================================
-           MẶT SAU (BACK CARD) - ĐÃ CẢI TIẾN THEO YÊU CẦU
+           MẶT SAU (BACK CARD) - CĂN GIỮA TOÀN DIỆN
            ========================================== */
         .back-card {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            padding: 25px;
+            justify-content: center;
+            padding: 20px;
             background: #ffffff;
         }
 
         .back-top-bar {
             position: absolute;
-            top: 15px;
+            top: 0; /* Đưa sát lên mép trên cùng giống ảnh mẫu */
             left: 0;
             width: 100%;
-            height: 20px;
+            height: 18px;
             background: #f48fb1;
         }
 
+        /* Khung chứa chính: Căn giữa tuyệt đối theo chiều dọc */
         .back-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-top: 20px;
             height: 100%;
-            gap: 10px;
+            margin-top: 10px; /* Nhường chỗ cho thanh hồng trên cùng */
+            gap: 5px;
         }
 
         /* Vùng chứa mã QR bên trái */
@@ -214,18 +207,16 @@
             flex-direction: column;
             align-items: center;
             gap: 6px;
-            margin-top: 25px; /* Giúp cân bằng trục ngang với phần còn lại */
         }
 
-        /* TĂNG KÍCH THƯỚC KHUNG QR */
         .qr-box {
-            width: 122px;
-            height: 122px;
+            width: 115px;
+            height: 115px;
             border: 2px solid #fff0f3;
             border-radius: 12px;
             padding: 5px;
             background: #fff;
-            box-shadow: 0 4px 10px rgba(244, 143, 177, 0.15);
+            box-shadow: 0 4px 10px rgba(244, 143, 177, 0.12);
         }
 
         .qr-box img {
@@ -238,59 +229,72 @@
             font-size: 8px;
             color: #ad1457;
             font-weight: 500;
+            white-space: nowrap;
         }
 
-        /* Thiết kế lại phần văn bản ở giữa cho đẹp và nhỏ gọn hơn */
+        /* Vùng nội dung chữ ở giữa */
         .text-zone {
             flex: 1;
             text-align: center;
-            padding: 0 4px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-top: 25px;
+        }
+
+        /* Khung chứa tim nhỏ phía trên chữ */
+        .mini-heart-box {
+            width: 20px;
+            height: 20px;
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mini-heart-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .text-zone h3 {
             font-size: 14px;
             color: #d81b60;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             font-weight: 800;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
 
-        /* THU NHỎ TEXT Ở GIỮA */
         .text-zone p {
-            font-size: 9px; 
+            font-size: 8.5px; 
             color: #662249;
-            line-height: 1.4;
+            line-height: 1.35;
             font-weight: 500;
-            max-width: 150px;
+            max-width: 155px;
         }
 
-        /* THU NHỎ TIÊU ĐỀ MỤC ĐÍCH SỬ DỤNG */
         .text-zone .purpose-title {
-            margin-top: 5px; 
+            margin-top: 3px; 
             font-weight: bold; 
             color: #e91e63;
-            font-size: 9.5px;
+            font-size: 9px;
         }
 
-        /* TĂNG KÍCH THƯỚC KHUNG SPOTIFY */
+        /* Mã Spotify nằm dưới cùng của khối giữa */
         .spotify-box {
-            width: 145px;
-            height: 32px;
+            width: 135px;
+            height: 30px;
             background: #ffffff; 
-            border: 1px solid #ddd;
+            border: 1px solid #eee;
             border-radius: 6px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 10px;
+            margin-top: 8px;
             padding: 2px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
         }
 
         .spotify-box img {
@@ -305,17 +309,15 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-top: 25px; 
         }
 
-        /* TĂNG KÍCH THƯỚC KHUNG VÂN TAY */
         .back-photo-box {
-            width: 122px;
-            height: 122px;
+            width: 115px;
+            height: 115px;
             border: 3px solid #ffffff;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(244, 143, 177, 0.2);
+            box-shadow: 0 4px 10px rgba(244, 143, 177, 0.15);
             background: #fce4ec;
         }
 
@@ -325,7 +327,7 @@
             object-fit: cover;
         }
 
-        /* Tối ưu hiển thị tốt hơn trên màn hình nhỏ di động (Giữ nguyên tỉ lệ cũ) */
+        /* --- ĐÁP ỨNG DI ĐỘNG --- */
         @media (max-width: 480px) {
             .card {
                 width: 340px;
@@ -343,24 +345,21 @@
             .field { font-size: 11px; }
             .label { width: 55px; }
             
-            .back-content { margin-top: 15px; }
-            .text-zone { margin-top: 15px; }
+            .back-top-bar { height: 14px; }
+            .back-content { margin-top: 8px; gap: 2px; }
+            .mini-heart-box { width: 14px; height: 14px; }
             .text-zone h3 { font-size: 11px; margin-bottom: 2px; }
-            .text-zone p { font-size: 8px; max-width: 120px; line-height: 1.3; }
-            .text-zone .purpose-title { font-size: 8.5px; margin-top: 3px; }
-            .qr-zone { margin-top: 15px; }
-            .qr-box { width: 80px; height: 80px; border-radius: 8px; }
-            .spotify-box { width: 90px; height: 22px; margin-top: 6px; }
-            .right-back-zone { margin-top: 15px; }
-            .back-photo-box { width: 80px; height: 80px; border-radius: 8px; }
+            .text-zone p { font-size: 7.5px; max-width: 110px; line-height: 1.25; }
+            .text-zone .purpose-title { font-size: 8px; margin-top: 2px; }
+            .qr-box { width: 82px; height: 82px; border-radius: 8px; }
+            .qr-hint { font-size: 7px; }
+            .spotify-box { width: 95px; height: 22px; margin-top: 5px; }
+            .back-photo-box { width: 82px; height: 82px; border-radius: 8px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ==========================================
-        MẶT TRƯỚC (FRONT CARD)
-        ========================================== -->
     <div class="card front-card">
         <div class="front-top">
             <div class="logo-area">
@@ -400,14 +399,10 @@
         <div class="front-bottom-bar"></div>
     </div>
 
-    <!-- ==========================================
-        MẶT SAU (BACK CARD)
-        ========================================== -->
     <div class="card back-card">
         <div class="back-top-bar"></div>
         
         <div class="back-content">
-            <!-- Cột chứa mã QR bên trái -->
             <div class="qr-zone">
                 <div class="qr-box">
                     <img src="audio2.png" alt="Mã QR Ghi Âm">
@@ -415,8 +410,10 @@
                 <div class="qr-hint">Quét mã để kích hoạt giọng nói</div>
             </div>
 
-            <!-- Cột chữ ở giữa -->
             <div class="text-zone">
+                <div class="mini-heart-box">
+                    <img src="heart.png" alt="Icon tim nhỏ">
+                </div>
                 <h3>Couple ID Card</h3>
                 <p>Dùng để nhận diện các cặp đôi đang trong một mối quan hệ.</p>
                 <p class="purpose-title">Mục đích sử dụng:</p>
@@ -427,7 +424,6 @@
                 </div>
             </div>
 
-            <!-- Cột chứa ảnh vân tay bên phải -->
             <div class="right-back-zone">
                 <div class="back-photo-box">
                     <img src="heart.png" alt="Chỗ để ảnh mặt sau">
