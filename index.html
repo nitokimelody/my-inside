@@ -180,7 +180,7 @@
         }
 
         /* ==========================================
-           MẶT SAU (BACK CARD)
+           MẶT SAU (BACK CARD) - ĐÃ CẢI TIẾN THEO YÊU CẦU
            ========================================== */
         .back-card {
             display: flex;
@@ -217,9 +217,10 @@
             margin-top: 25px; /* Giúp cân bằng trục ngang với phần còn lại */
         }
 
+        /* TĂNG KÍCH THƯỚC KHUNG QR */
         .qr-box {
-            width: 110px;
-            height: 110px;
+            width: 122px;
+            height: 122px;
             border: 2px solid #fff0f3;
             border-radius: 12px;
             padding: 5px;
@@ -243,7 +244,7 @@
         .text-zone {
             flex: 1;
             text-align: center;
-            padding: 0 8px;
+            padding: 0 4px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -259,25 +260,27 @@
             letter-spacing: 0.5px;
         }
 
+        /* THU NHỎ TEXT Ở GIỮA */
         .text-zone p {
-            font-size: 10px; /* Thu nhỏ chữ lại theo yêu cầu */
+            font-size: 9px; 
             color: #662249;
-            line-height: 1.5;
+            line-height: 1.4;
             font-weight: 500;
-            max-width: 160px;
+            max-width: 150px;
         }
 
+        /* THU NHỎ TIÊU ĐỀ MỤC ĐÍCH SỬ DỤNG */
         .text-zone .purpose-title {
-            margin-top: 6px; 
+            margin-top: 5px; 
             font-weight: bold; 
             color: #e91e63;
-            font-size: 10.5px;
+            font-size: 9.5px;
         }
 
-        /* Khung quét mã Spotify */
+        /* TĂNG KÍCH THƯỚC KHUNG SPOTIFY */
         .spotify-box {
-            width: 125px;
-            height: 28px;
+            width: 145px;
+            height: 32px;
             background: #ffffff; 
             border: 1px solid #ddd;
             border-radius: 6px;
@@ -296,19 +299,19 @@
             object-fit: contain;
         }
 
-        /* Vùng chứa ảnh vân tay bên phải - Di chuyển lên trên để ngang hàng đối diện */
+        /* Vùng chứa ảnh vân tay bên phải */
         .right-back-zone {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-top: 25px; /* Đã tinh chỉnh để cân bằng trục ngang tuyệt đối với QR-box */
+            margin-top: 25px; 
         }
 
-        /* Khung ảnh vân tay trái tim */
+        /* TĂNG KÍCH THƯỚC KHUNG VÂN TAY */
         .back-photo-box {
-            width: 110px;
-            height: 110px;
+            width: 122px;
+            height: 122px;
             border: 3px solid #ffffff;
             border-radius: 12px;
             overflow: hidden;
@@ -322,7 +325,7 @@
             object-fit: cover;
         }
 
-        /* Tối ưu hiển thị tốt hơn trên màn hình nhỏ di động */
+        /* Tối ưu hiển thị tốt hơn trên màn hình nhỏ di động (Giữ nguyên tỉ lệ cũ) */
         @media (max-width: 480px) {
             .card {
                 width: 340px;
@@ -356,11 +359,10 @@
 <body>
 
     <!-- ==========================================
-       MẶT TRƯỚC (FRONT CARD)
-       ========================================== -->
+        MẶT TRƯỚC (FRONT CARD)
+        ========================================== -->
     <div class="card front-card">
         <div class="front-top">
-            <!-- Box chữ dời qua bên trái và làm to lên -->
             <div class="logo-area">
                 <div class="logo-text">Couple ID Card</div>
             </div>
@@ -399,8 +401,8 @@
     </div>
 
     <!-- ==========================================
-       MẶT SAU (BACK CARD)
-       ========================================== -->
+        MẶT SAU (BACK CARD)
+        ========================================== -->
     <div class="card back-card">
         <div class="back-top-bar"></div>
         
@@ -413,7 +415,7 @@
                 <div class="qr-hint">Quét mã để kích hoạt giọng nói</div>
             </div>
 
-            <!-- Cột chữ ở giữa được thu nhỏ lại và thiết kế đẹp mắt hơn -->
+            <!-- Cột chữ ở giữa -->
             <div class="text-zone">
                 <h3>Couple ID Card</h3>
                 <p>Dùng để nhận diện các cặp đôi đang trong một mối quan hệ.</p>
@@ -425,7 +427,7 @@
                 </div>
             </div>
 
-            <!-- Cột chứa ảnh vân tay bên phải (Trái tim nhỏ phía trên đã được xóa, đẩy khung ảnh lên cân đối) -->
+            <!-- Cột chứa ảnh vân tay bên phải -->
             <div class="right-back-zone">
                 <div class="back-photo-box">
                     <img src="heart.png" alt="Chỗ để ảnh mặt sau">
