@@ -124,7 +124,7 @@
         .value {
             color: #111;
             font-weight: 500;
-        }
+            }
 
         /* Khu vực ảnh và mã vạch bên phải */
         .right-zone {
@@ -178,6 +178,7 @@
         /* Thanh trang trí đáy */
         .front-bottom-bar {
             position: absolute;
+            top: unset;
             bottom: 0;
             left: 0;
             width: 100%;
@@ -245,6 +246,10 @@
             flex: 1;
             text-align: center;
             padding: 0 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .text-zone h3 {
@@ -266,7 +271,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 5px;
         }
 
         /* Vân tay hình tim */
@@ -274,6 +279,23 @@
             font-size: 45px;
             color: #c1728c;
             line-height: 1;
+        }
+
+        /* Khung chứa ảnh mới mặt sau bổ sung */
+        .back-photo-box {
+            width: 120px;
+            height: 120px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: #e0e0e0;
+        }
+
+        .back-photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Khung quét mã Spotify */
@@ -286,6 +308,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-top: 10px;
         }
 
         .spotify-box img {
@@ -314,6 +337,7 @@
             .qr-box { width: 80px; height: 80px; }
             .spotify-box { width: 90px; height: 23px; }
             .fingerprint { font-size: 30px; }
+            .back-photo-box { width: 85px; height: 85px; }
         }
     </style>
 </head>
@@ -375,13 +399,17 @@
                 <p>Dùng để nhận diện các cặp đôi đang trong một mối quan hệ.</p>
                 <p style="margin-top: 5px; font-weight: bold; color: #c1728c;">Mục đích sử dụng:</p>
                 <p>Khẳng định chủ quyền, vui lòng luôn mang theo bên mình.</p>
+                
+                <div class="spotify-box">
+                    <img src="https://placeholder.pics/svg/120x30/000000/FFFFFF/Spotify%20Code" alt="Spotify Code">
+                </div>
             </div>
 
             <div class="right-back-zone">
                 <div class="fingerprint">♥</div>
                 
-                <div class="spotify-box">
-                    <img src="https://placeholder.pics/svg/120x30/000000/FFFFFF/Spotify%20Code" alt="Spotify Code">
+                <div class="back-photo-box">
+                    <img src="https://placeholder.pics/svg/120" alt="Chỗ để ảnh mặt sau">
                 </div>
             </div>
         </div>
