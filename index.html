@@ -180,13 +180,13 @@
         }
 
         /* ==========================================
-           MẶT SAU (BACK CARD) - ĐÃ CẢI TIẾN THEO YÊU CẦU
+           MẶT SAU (BACK CARD) - TĂNG SIÊU TO CẢ 3 ẢNH
            ========================================== */
         .back-card {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 25px;
+            padding: 20px 22px; /* Thu bớt padding ngoài để nhường chỗ cho ảnh to */
             background: #ffffff;
         }
 
@@ -203,9 +203,9 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-top: 20px;
+            margin-top: 25px;
             height: 100%;
-            gap: 10px;
+            gap: 8px;
         }
 
         /* Vùng chứa mã QR bên trái */
@@ -213,19 +213,19 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 6px;
-            margin-top: 25px; /* Giúp cân bằng trục ngang với phần còn lại */
+            gap: 5px;
+            margin-top: 15px;
         }
 
-        /* TĂNG KÍCH THƯỚC KHUNG QR */
+        /* MÃ QR ĐƯỢC TĂNG LÊN SIÊU TO (135px) */
         .qr-box {
-            width: 122px;
-            height: 122px;
+            width: 135px;
+            height: 135px;
             border: 2px solid #fff0f3;
-            border-radius: 12px;
-            padding: 5px;
+            border-radius: 14px;
+            padding: 6px;
             background: #fff;
-            box-shadow: 0 4px 10px rgba(244, 143, 177, 0.15);
+            box-shadow: 0 4px 12px rgba(244, 143, 177, 0.18);
         }
 
         .qr-box img {
@@ -240,57 +240,55 @@
             font-weight: 500;
         }
 
-        /* Thiết kế lại phần văn bản ở giữa cho đẹp và nhỏ gọn hơn */
+        /* Phần văn bản ở giữa */
         .text-zone {
             flex: 1;
             text-align: center;
-            padding: 0 4px;
+            padding: 0 2px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-top: 25px;
+            margin-top: 15px;
         }
 
         .text-zone h3 {
-            font-size: 14px;
+            font-size: 13px; /* Giảm nhẹ 1px để nhường diện tích cho 2 ảnh bên cạnh rộng ra */
             color: #d81b60;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             font-weight: 800;
             letter-spacing: 0.5px;
         }
 
-        /* THU NHỎ TEXT Ở GIỮA */
         .text-zone p {
             font-size: 9px; 
             color: #662249;
-            line-height: 1.4;
+            line-height: 1.35;
             font-weight: 500;
-            max-width: 150px;
+            max-width: 140px; /* Thu hẹp chiều rộng text một chút để ảnh hai bên phình to ra thoải mái */
         }
 
-        /* THU NHỎ TIÊU ĐỀ MỤC ĐÍCH SỬ DỤNG */
         .text-zone .purpose-title {
-            margin-top: 5px; 
+            margin-top: 4px; 
             font-weight: bold; 
             color: #e91e63;
             font-size: 9.5px;
         }
 
-        /* TĂNG KÍCH THƯỚC KHUNG SPOTIFY */
+        /* MÃ SPOTIFY ĐƯỢC PHÌNH TO HẲN RA (165px x 35px) */
         .spotify-box {
-            width: 145px;
-            height: 32px;
+            width: 165px;
+            height: 35px;
             background: #ffffff; 
             border: 1px solid #ddd;
-            border-radius: 6px;
+            border-radius: 8px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 10px;
-            padding: 2px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-top: 12px;
+            padding: 3px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.06);
         }
 
         .spotify-box img {
@@ -305,17 +303,17 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-top: 25px; 
+            margin-top: 15px; 
         }
 
-        /* TĂNG KÍCH THƯỚC KHUNG VÂN TAY */
+        /* KHUNG VÂN TAY ĐƯỢC TĂNG LÊN SIÊU TO ĐỒNG BỘ (135px) */
         .back-photo-box {
-            width: 122px;
-            height: 122px;
+            width: 135px;
+            height: 135px;
             border: 3px solid #ffffff;
-            border-radius: 12px;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(244, 143, 177, 0.2);
+            box-shadow: 0 4px 12px rgba(244, 143, 177, 0.22);
             background: #fce4ec;
         }
 
@@ -325,7 +323,7 @@
             object-fit: cover;
         }
 
-        /* Tối ưu hiển thị tốt hơn trên màn hình nhỏ di động (Giữ nguyên tỉ lệ cũ) */
+        /* Tối ưu hiển thị tốt hơn trên màn hình nhỏ di động (Giữ nguyên tỉ lệ góc của bạn) */
         @media (max-width: 480px) {
             .card {
                 width: 340px;
