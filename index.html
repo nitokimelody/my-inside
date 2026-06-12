@@ -24,29 +24,10 @@
             min-height: 100vh;
         }
 
-        /* Khung hướng dẫn in ấn */
-        .print-guide {
-            width: 100%;
-            max-width: 500px;
-            background: #fff;
-            padding: 15px 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            border-left: 4px solid #102a54;
-            font-size: 13px;
-            color: #444;
-            line-height: 1.5;
-        }
-        .print-guide h4 {
-            color: #102a54;
-            margin-bottom: 6px;
-            font-size: 14px;
-        }
-
-        /* --- KHUNG THẺ CHUNG (Tỷ lệ chuẩn CCCD: 85.6mm x 53.98mm) --- */
+        /* --- KHUNG THẺ CHUNG --- */
         .card {
             width: 450px;
-            height: 283.7px; /* Giữ nguyên tỷ lệ chuẩn của CCCD khi scale lên chiều rộng 450px */
+            height: 270px;
             background: #ffffff;
             border-radius: 15px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
@@ -66,7 +47,7 @@
         /* Dải màu hồng đô thị phía trên */
         .front-top {
             height: 85px;
-            background: linear-gradient(to right, #d493a7, #c1728c);
+            background: linear-gradient(to right, #d493a7, #c1728c); /* Bạn có thể thay bằng ảnh cityscape nếu có */
             position: relative;
         }
 
@@ -125,13 +106,12 @@
         .info-fields {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
             justify-content: center;
         }
 
         .field {
             display: flex;
-            align-items: center;
             font-size: 14px;
         }
 
@@ -143,16 +123,7 @@
 
         .value {
             color: #111;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .tangerine-icon {
-            font-size: 15px;
-            line-height: 1;
-            vertical-align: middle;
+            font-weight: 500;
         }
 
         /* Khu vực ảnh và mã vạch bên phải */
@@ -162,7 +133,7 @@
             align-items: center;
             justify-content: space-between;
             width: 160px;
-            margin-top: -45px;
+            margin-top: -45px; /* Đẩy ảnh đè lên dải màu hồng */
             z-index: 2;
         }
 
@@ -215,42 +186,40 @@
         }
 
         /* ==========================================
-           MẶT SAU (BACK CARD) - THIẾT KẾ MỚI ĐÚNG MẪU IN
+           MẶT SAU (BACK CARD)
            ========================================== */
         .back-card {
-            display: block;
-            padding: 0;
-            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 25px;
         }
 
-        /* Thanh xanh chạy ngang phía trên mặt sau */
+        /* Thanh trang trí trên của mặt sau */
         .back-top-bar {
             position: absolute;
-            top: 25px;
+            top: 15px;
             left: 0;
             width: 100%;
             height: 20px;
             background: #102a54;
         }
 
-        /* Bố cục chính mặt sau chia làm 3 cột theo hàng ngang */
-        .back-body-layout {
+        .back-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 100%;
+            margin-top: 25px;
             height: 100%;
-            padding: 60px 20px 20px 20px; /* Chừa khoảng trống cho thanh top bar */
+            gap: 15px;
         }
 
-        /* Cột trái: Mã QR và dòng chữ nhỏ ở dưới */
-        .back-left-col {
+        /* Vùng chứa mã QR */
+        .qr-zone {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            width: 110px;
-            gap: 4px;
+            gap: 5px;
         }
 
         .qr-box {
@@ -264,78 +233,59 @@
         .qr-box img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
         }
 
         .qr-hint {
-            font-size: 7.5px;
+            font-size: 8px;
             color: #666;
-            text-align: center;
-            white-space: nowrap;
         }
 
-        /* Cột giữa: Văn bản pháp lý / khẳng định chủ quyền */
-        .back-center-col {
+        /* Đoạn văn bản trung tâm */
+        .text-zone {
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             text-align: center;
             padding: 0 10px;
         }
 
-        .back-center-col h3 {
-            font-size: 15px;
+        .text-zone h3 {
+            font-size: 16px;
             color: #102a54;
-            margin-bottom: 6px;
-            font-weight: bold;
+            margin-bottom: 8px;
         }
 
-        .back-center-col p {
-            font-size: 11px;
-            color: #333;
+        .text-zone p {
+            font-size: 12px;
+            color: #444;
             line-height: 1.4;
+            font-weight: 500;
         }
 
-        /* Cột phải: 2 Vân tay đè nhau hình trái tim */
-        .back-right-col {
+        /* Vùng chứa mã ẩn/Mã quét Spotify bên phải */
+        .right-back-zone {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 110px;
+            gap: 10px;
         }
 
-        /* SVG Trái Tim ghép từ 2 dấu vân tay */
-        .fingerprint-heart-svg {
-            width: 90px;
-            height: 90px;
+        /* Vân tay hình tim */
+        .fingerprint {
+            font-size: 45px;
+            color: #c1728c;
+            line-height: 1;
         }
 
-        /* Hàng ngang dưới cùng: Căn giữa mã quét Spotify nằm dưới mã QR và Vân Tay */
-        .back-bottom-spotify-zone {
-            position: absolute;
-            bottom: 22px;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10;
-        }
-
+        /* Khung quét mã Spotify */
         .spotify-box {
-            width: 150px;
-            height: 35px;
-            background: #000000;
-            border-radius: 6px;
+            width: 120px;
+            height: 30px;
+            background: #000; /* Nền đen đặc trưng của mã quét Spotify */
+            border-radius: 4px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 4px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
         }
 
         .spotify-box img {
@@ -344,32 +294,11 @@
             object-fit: contain;
         }
 
-        /* Thanh màu xanh có đường cắt vát chéo trang trí ở đáy mặt sau */
-        .back-bottom-decoration {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 10px;
-            background: #102a54;
-        }
-        
-        .back-bottom-decoration::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 120px;
-            width: 40px;
-            height: 100%;
-            background: #ffffff;
-            transform: skewX(-45deg);
-        }
-
-        /* Tối ưu hiển thị trên thiết bị di động */
+        /* Tối ưu hiển thị trên màn hình nhỏ */
         @media (max-width: 480px) {
             .card {
                 width: 340px;
-                height: 214.3px;
+                height: 210px;
             }
             .front-top { height: 65px; }
             .logo-circle { width: 35px; height: 35px; font-size: 7px;}
@@ -380,32 +309,16 @@
             .field { font-size: 11px; }
             .label { width: 60px; }
             .barcode-dummy { width: 95px; height: 18px; }
-            
-            .back-top-bar { top: 15px; height: 14px; }
-            .back-body-layout { padding: 40px 12px 12px 12px; }
-            .back-left-col { width: 80px; }
-            .qr-box { width: 80px; height: 80px; padding: 3px; }
-            .qr-hint { font-size: 6px; }
-            .back-center-col h3 { font-size: 12px; margin-bottom: 2px; }
-            .back-center-col p { font-size: 8.5px; line-height: 1.3; }
-            .back-right-col { width: 80px; }
-            .fingerprint-heart-svg { width: 65px; height: 65px; }
-            .back-bottom-spotify-zone { bottom: 15px; }
-            .spotify-box { width: 110px; height: 26px; }
-            .back-bottom-decoration { height: 7px; }
+            .text-zone h3 { font-size: 13px; }
+            .text-zone p { font-size: 9px; }
+            .qr-box { width: 80px; height: 80px; }
+            .spotify-box { width: 90px; height: 23px; }
+            .fingerprint { font-size: 30px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Khung hướng dẫn -->
-    <div class="print-guide">
-        <h4>💡 Hướng dẫn dành cho GitHub & In Ấn:</h4>
-        <p>1. <strong>Mặt sau thiết kế mới:</strong> Đã căn chỉnh chuẩn vị trí theo ảnh chụp thực tế của bạn (Mã QR bên trái, Vân tay trái tim bên phải, Mã quét Spotify đặt ở dưới chính giữa).</p>
-        <p>2. <strong>Ảnh thay thế:</strong> Hãy thay thế các file ảnh <code>memory 15.jpg</code>, <code>qrcode.png</code>, và <code>spotify.png</code> vào thư mục trên GitHub để thẻ hiển thị trọn vẹn.</p>
-    </div>
-
-    <!-- ==================== MẶT TRƯỚC ==================== -->
     <div class="card front-card">
         <div class="front-top">
             <div class="logo-area">
@@ -418,11 +331,11 @@
             <div class="info-fields">
                 <div class="field">
                     <div class="label">Id Card</div>
-                    <div class="value">Hữu Duy &amp; Như Quỳnh <span class="tangerine-icon">🍊</span></div>
+                    <div class="value">♥Hữu Duy & Như Quỳnh🍊♥</div>
                 </div>
                 <div class="field">
                     <div class="label">Age</div>
-                    <div class="value">2008 &amp; 2008</div>
+                    <div class="value">2008 & 2008</div>
                 </div>
                 <div class="field">
                     <div class="label">Rela</div>
@@ -436,7 +349,7 @@
 
             <div class="right-zone">
                 <div class="photo-box">
-                    <img src="memory 15.jpg" alt="Chỗ để ảnh cặp đôi">
+                    <img src="https://placeholder.pics/svg/300" alt="Chỗ để ảnh cặp đôi">
                 </div>
                 <div class="sub-text">Best Couple</div>
                 <div class="barcode-dummy"></div>
@@ -446,62 +359,32 @@
     </div>
 
 
-    <!-- ==================== MẶT SAU ==================== -->
     <div class="card back-card">
-        <!-- Thanh trang trí xanh chạy ngang phía trên -->
         <div class="back-top-bar"></div>
         
-        <div class="back-body-layout">
-            <!-- Cột trái: Mã QR ghi âm -->
-            <div class="back-left-col">
+        <div class="back-content">
+            <div class="qr-zone">
                 <div class="qr-box">
-                    <!-- Sửa đường dẫn ảnh mã QR ghi âm tại đây -->
-                    <img src="qrcode.png" alt="Mã QR Ghi Âm">
+                    <img src="https://placeholder.pics/svg/150" alt="Mã QR Ghi Âm">
                 </div>
                 <div class="qr-hint">Quét mã để kích hoạt giọng nói</div>
             </div>
 
-            <!-- Cột giữa: Văn bản thông tin -->
-            <div class="back-center-col">
-                <h3>Couple ID card :</h3>
-                <p>Dùng để nhận diện các cặp đôi đang trong 1 mối quan hệ</p>
-                <p style="margin-top: 4px; font-weight: bold; color: #c1728c;">Mục đích sử dụng :</p>
+            <div class="text-zone">
+                <h3>Couple ID Card</h3>
+                <p>Dùng để nhận diện các cặp đôi đang trong một mối quan hệ.</p>
+                <p style="margin-top: 5px; font-weight: bold; color: #c1728c;">Mục đích sử dụng:</p>
                 <p>Khẳng định chủ quyền, vui lòng luôn mang theo bên mình.</p>
             </div>
 
-            <!-- Cột phải: Dấu vân tay đôi hình trái tim bằng SVG Vector sắc nét -->
-            <div class="back-right-col">
-                <svg class="fingerprint-heart-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Vân tay bên trái chếch sang phải -->
-                    <g opacity="0.85" stroke="#c1728c" stroke-width="1.8" stroke-linecap="round">
-                        <path d="M40,30 C30,35 25,48 30,60 C32,65 36,72 42,78" />
-                        <path d="M43,24 C31,30 24,45 28,62 C30,70 36,78 45,84" />
-                        <path d="M47,18 C32,25 22,42 25,65 C27,75 34,84 48,90" />
-                        <path d="M50,13 C32,20 20,40 22,68 C24,80 32,91 50,96" />
-                        <path d="M42,38 C36,42 33,50 35,58 C36,62 39,67 43,71" />
-                    </g>
-                    <!-- Vân tay bên phải chếch sang trái tạo thành hình trái tim đè lên nhau -->
-                    <g opacity="0.85" stroke="#a35670" stroke-width="1.8" stroke-linecap="round">
-                        <path d="M60,30 C70,35 75,48 70,60 C68,65 64,72 58,78" />
-                        <path d="M57,24 C69,30 76,45 72,62 C70,70 64,78 55,84" />
-                        <path d="M53,18 C68,25 78,42 75,65 C73,75 66,84 52,90" />
-                        <path d="M50,13 C68,20 80,40 78,68 C76,80 68,91 50,96" />
-                        <path d="M58,38 C64,42 67,50 65,58 C64,62 61,67 57,71" />
-                    </g>
-                </svg>
+            <div class="right-back-zone">
+                <div class="fingerprint">♥</div>
+                
+                <div class="spotify-box">
+                    <img src="https://placeholder.pics/svg/120x30/000000/FFFFFF/Spotify%20Code" alt="Spotify Code">
+                </div>
             </div>
         </div>
-
-        <!-- Khu vực mã quét Spotify nằm ở hàng dưới chính giữa -->
-        <div class="back-bottom-spotify-zone">
-            <div class="spotify-box">
-                <!-- Sửa đường dẫn ảnh mã quét từ spotifycodes.com tại đây -->
-                <img src="spotify.png" alt="Spotify Code">
-            </div>
-        </div>
-
-        <!-- Thanh trang trí đáy mặt sau -->
-        <div class="back-bottom-decoration"></div>
     </div>
 
 </body>
